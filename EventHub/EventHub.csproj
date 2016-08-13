@@ -205,10 +205,21 @@
     <Compile Include="Migrations\201608130002466_initialmodel.Designer.cs">
       <DependentUpon>201608130002466_initialmodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608130136526_createEventTable.cs" />
+    <Compile Include="Migrations\201608130136526_createEventTable.Designer.cs">
+      <DependentUpon>201608130136526_createEventTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608130213038_OverrideConventionsForTopicsandEvents.cs" />
+    <Compile Include="Migrations\201608130213038_OverrideConventionsForTopicsandEvents.Designer.cs">
+      <DependentUpon>201608130213038_OverrideConventionsForTopicsandEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -287,6 +298,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608130002466_initialmodel.resx">
       <DependentUpon>201608130002466_initialmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608130136526_createEventTable.resx">
+      <DependentUpon>201608130136526_createEventTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608130213038_OverrideConventionsForTopicsandEvents.resx">
+      <DependentUpon>201608130213038_OverrideConventionsForTopicsandEvents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
