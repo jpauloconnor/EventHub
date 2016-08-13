@@ -1,4 +1,5 @@
 ﻿using EventHub.Models;
+using System;
 using System.Collections.Generic;
 
 namespace EventHub.ViewModels
@@ -11,5 +12,13 @@ namespace EventHub.ViewModels
         public byte Topic { get; set; }
 
         public IEnumerable<Topic> Topics { get; set; }
-    }
+
+        public DateTime DateTime
+        {
+            get
+            {
+                return DateTime.Parse(string.Format("{0} {1}", Date, Time)); 
+            }
+        }
+    } 
 }
