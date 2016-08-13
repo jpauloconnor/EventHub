@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201608131228132_populatetopicstable.Designer.cs">
       <DependentUpon>201608131228132_populatetopicstable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608131719517_AddForeignKeyPropertiesToEvent.cs" />
+    <Compile Include="Migrations\201608131719517_AddForeignKeyPropertiesToEvent.Designer.cs">
+      <DependentUpon>201608131719517_AddForeignKeyPropertiesToEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608131228132_populatetopicstable.resx">
       <DependentUpon>201608131228132_populatetopicstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608131719517_AddForeignKeyPropertiesToEvent.resx">
+      <DependentUpon>201608131719517_AddForeignKeyPropertiesToEvent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

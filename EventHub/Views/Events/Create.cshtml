@@ -3,12 +3,12 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Create</h2>
-<form>
+@using (Html.BeginForm("Create", "Events"))
+{
     <div class="form-group">
         @Html.LabelFor(m => m.Venue);
-        @Html.TextBoxFor(m => m.Venue, new { @class = "form-control"})
+        @Html.TextBoxFor(m => m.Venue, new { @class = "form-control" })
 
     </div>
 
@@ -23,9 +23,8 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Topic);
-        @Html.DropDownListFor(m=> m.Topic, new SelectList(Model.Topics, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Topic, new SelectList(Model.Topics, "Id", "Name"), "", new { @class = "form-control" })
 
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
-</form>
-
+}
