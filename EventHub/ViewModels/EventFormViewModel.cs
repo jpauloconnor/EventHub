@@ -1,24 +1,30 @@
 ﻿using EventHub.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EventHub.ViewModels
 {
     public class EventFormViewModel
     {
-        public string Venue { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public byte Topic { get; set; }
 
+        [Required]
+        public string Venue { get; set; }
+
+        [Required]
+        [FutureDate]
+        public string Date { get; set; }
+
+        [Required]
+        public string Time { get; set; }
+        [Required]
+        public byte Topic { get; set; }
+        [Required]
         public IEnumerable<Topic> Topics { get; set; }
 
-        public DateTime DateTime
+        public DateTime GetDateTime()
         {
-            get
-            {
-                return DateTime.Parse(string.Format("{0} {1}", Date, Time)); 
-            }
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     } 
 }

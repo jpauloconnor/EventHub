@@ -1,7 +1,6 @@
 ﻿using EventHub.Models;
 using EventHub.ViewModels;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -31,14 +30,16 @@ namespace EventHub.Controllers
         [HttpPost]
         public ActionResult Create(EventFormViewModel viewModel)
         {
-            //var speakerId = User.Identity.GetUserId();
-            //var speaker = _context.Users.Single(u => u.Id == speakerId);
-            //var topic = _context.Topics.Single(t => t.Id == viewModel.Topic);
+            if (!ModelState.IsValid)
+            {
+                viewModel.Topics = _context.Topics.ToList();
+                return View("Create", viewModel);
+            };
 
             var singleEvent = new Event
             {
                 SpeakerId = User.Identity.GetUserId(),
-                DateTime = DateTime.Parse(string.Format("{0} {1}", viewModel.Date, viewModel.Time)),
+                DateTime = viewModel.GetDateTime(),
                 TopicId = viewModel.Topic,
                 Venue = viewModel.Venue
 
